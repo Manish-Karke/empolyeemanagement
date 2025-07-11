@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { CreateEmpolyees, UpdateEmpolyees } from "../../api";
-import { notify } from "../../../utils";
+import { CreateEmpolyees, UpdateEmpolyees } from "../api";
+import { notify } from "../../utils";
 
-function AddEmployee({ showModal, setShowModal, fetchEmployees, employeeObj }) {
+export default function AddEmployee({ showModal, setShowModal, fetchEmployees, employeeObj }) {
   const [employee, setEmployee] = useState({
     name: "",
     email: "",
@@ -165,4 +165,4 @@ function AddEmployee({ showModal, setShowModal, fetchEmployees, employeeObj }) {
   );
 }
 
-export default AddEmployee;
+

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import EmployeeTable from "../EmpolyeeTable/page";
-import AddEmpolyee from "../AddEmpolyee/page";
+import AddEmployee from "../AddEmployee";
 import { DeleteEmpolyees, GetAllEmpolyees } from "../../api";
 import { notify } from "../../../utils";
 
@@ -52,22 +52,24 @@ const EmployeeManagementApp = () => {
     setShowModal(true);
   };
 
-  const handleDeleteEmployee = async (emp) => {
-    console.log(emp);
-    if (window.confirm("Are you sure you want to delete this employee?")) {
-      try {
-        const { success, message } = await DeleteEmpolyees(emp); // Call your API to delete the employee
-        if (success) {
-          notify(message, "success");
-          fetchEmployees();
-        } else {
-          notify(message, "error");
-        }
-      } catch (error) {
-        notify("Error deleting employee:", "error");
+ const handleDeleteEmployee = async (emp) => {
+  console.log(emp);
+  if (window.confirm("Are you sure you want to delete this employee?")) {
+    try {
+      const { success, message } = await DeleteEmpolyees(emp);
+      if (success) {
+        notify(message, "success");
+        fetchEmployees();
+      } else {
+        notify(message, "error");
       }
+    } catch (error) {
+      console.error("Error deleting employee:", error);
+      notify("Error deleting employee", "error");
     }
-  };
+  }
+};
+
 
   const handleAddEmpolyee = () => {
     setShowModal(true);
