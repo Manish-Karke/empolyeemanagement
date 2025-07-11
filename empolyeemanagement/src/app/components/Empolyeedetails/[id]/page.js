@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { GetEmployeeDetailsById } from "../../../api";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import Image from 'next/image'
 const EmployeeDetailPage = () => {
   const { id } = useParams(); 
   const router = useRouter(); 
@@ -32,7 +32,7 @@ const EmployeeDetailPage = () => {
         <div className="card-body">
           <div className="row mb-3">
             <div className="col-md-3">
-              <img
+              <Image
                 src={employee.data.image}
                 alt={employee.data.name}
                 className="img-fluid rounded"
