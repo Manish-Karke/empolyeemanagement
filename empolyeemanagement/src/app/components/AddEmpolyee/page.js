@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { CreateEmpolyees, UpdateEmpolyees } from "../../api";
 import { notify } from "../../../utils";
