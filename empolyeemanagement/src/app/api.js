@@ -1,4 +1,4 @@
-const BASE_API = "http://127.0.0.1:8000";
+const BASE_API = "https://empolyeemanagement-68fv64fbk-manish123his-projects.vercel.app/";
 
 export const GetAllEmpolyees = async (search = "", page = 1, limit = 5) => {
   const url = `${BASE_API}/api/empolyes?search=${search}&page=${page}&limit=${limit}`;
