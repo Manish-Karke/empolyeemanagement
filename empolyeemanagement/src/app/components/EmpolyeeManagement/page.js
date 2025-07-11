@@ -52,22 +52,24 @@ const EmployeeManagementApp = () => {
     setShowModal(true);
   };
 
-  const handleDeleteEmployee = async (emp) => {
-    console.log(emp);
-    if (window.confirm("Are you sure you want to delete this employee?")) {
-      try {
-        const { success, message } = await DeleteEmpolyees(emp); // Call your API to delete the employee
-        if (success) {
-          notify(message, "success");
-          fetchEmployees();
-        } else {
-          notify(message, "error");
-        }
-      } catch (error) {
-        notify("Error deleting employee:", "error");
+ const handleDeleteEmployee = async (emp) => {
+  console.log(emp);
+  if (window.confirm("Are you sure you want to delete this employee?")) {
+    try {
+      const { success, message } = await DeleteEmpolyees(emp);
+      if (success) {
+        notify(message, "success");
+        fetchEmployees();
+      } else {
+        notify(message, "error");
       }
+    } catch (error) {
+      console.error("Error deleting employee:", error);
+      notify("Error deleting employee", "error");
     }
-  };
+  }
+};
+
 
   const handleAddEmpolyee = () => {
     setShowModal(true);
