@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import EmployeeTable from "../EmpolyeeTable/page";
-import AddEmpolyee from "../AddEmpolyee/page";
+import AddEmployee from "../AddEmployee";
 import { DeleteEmpolyees, GetAllEmpolyees } from "../../api";
 import { notify } from "../../../utils";
 
