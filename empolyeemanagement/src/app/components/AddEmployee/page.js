@@ -3,7 +3,12 @@ import React, { useEffect, useState } from "react";
 import { CreateEmpolyees, UpdateEmpolyees } from "../api";
 import { notify } from "../../utils";
 
-export default function AddEmployee({ showModal, setShowModal, fetchEmployees, employeeObj }) {
+export default function AddEmployee({
+  showModal,
+  setShowModal,
+  fetchEmployees,
+  employeeObj,
+}) {
   const [employee, setEmployee] = useState({
     name: "",
     email: "",
@@ -164,5 +169,3 @@ export default function AddEmployee({ showModal, setShowModal, fetchEmployees, e
     </div>
   );
 }
-
-
