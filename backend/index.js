@@ -12,6 +12,9 @@ app.use(bodyparser.json());
 app.get("/", (req, res) => {
   res.send("you are loggined");
 });
+app.get("/ping", (req, res) => {
+  res.send("PONG");
+});
 app.use("/api/empolyes", empRoutes);
 app.listen(port, Url, (err) => {
   if (!err) {
